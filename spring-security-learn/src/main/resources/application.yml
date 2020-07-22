@@ -1,0 +1,14 @@
+spring:
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://49.232.105.82:3308/myblog?useSSL=false
+    username: root
+    password: 7324368Best!@
+server:
+  port: 9090
+mybatis:
+  mapper-locations: classpath*:com/zhangxp/blog/mapper/xml/*.xml

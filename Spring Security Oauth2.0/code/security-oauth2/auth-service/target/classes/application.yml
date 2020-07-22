@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://49.232.105.82:3308/mytest?useSSL=false
+    username: root
+    password: 7324368Best!@
+  main:
+    allow-bean-definition-overriding: true
+server:
+  servlet:
+    context-path: /auth-service
+  port: 5000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: service-hi
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://49.232.105.82:3308/mytest?useSSL=false
+    username: root
+    password: 7324368Best!@
+server:
+  servlet:
+    context-path: /service-hi
+  port: 5001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
