@@ -299,7 +299,7 @@ ExceptionTranslationFilter:能够捕获来自FilterChain所有的异常，并进
 
 4.SecurityContextHolder安全上下文容器将第3步填充了信息的Authentication,通过SecurityContextHolder.getContext().setAuthenticaiton()方法，设置到其中。
 
-#### 3.2.2.2  AuthenticationProvider
+#### 2.2.2 AuthenticationProvider
 
 通过前面的Spring Security认证流程我们得知，认证管理器(AuthenticationManager)委托AuthenticationProvider完成认证工作。
 
@@ -348,7 +348,7 @@ public interface Authentication extends Principal, Serializable {
 
 ```
 
-#### 3.2.2.3 UserDetailsService
+#### 2.2.3 UserDetailsService
 
 1) 认识UserDetailsService
 
@@ -385,6 +385,63 @@ public interface UserDetails extends Serializable {
 
 ```
 
+#### 2.2.4 PasswordEncoder
+
+### 2.3 授权流程
+
+#### 2.3.1 授权流程
+
+Spring Security可以通过http.authorizeRequests()对web请求进行授权保护。Spring Security使用标准Filter建立了对web请求的拦截，最终实现对资源的授权访问。
+
+Spring Security的授权流程如下：
+
+![image-20200723215858332](Spring Security.assets/image-20200723215858332.png)
+
+分析授权流程：
+
+- 1.拦截请求，已认证用户访问受保护的web资源将被SecurityFilterChain中的FilterSecurityInterceptor的子类拦截。
+
+- 2.获取资源访问策略，FilterSecurityInterceptor会从SecurityMetadataSource的子类DefaultFilterInvocationSecurityMetadataSource获取要访问当前资源所需要的权限Collection<ConfigAttribute>。
+
+- SecurityMetadataSource其实就是读取访问策略的抽象，而读取的内容，其实就是我们配置的访问规则，读取访问策略如：
+
+- ```java
+  httpSecurity.authorizeRequests()
+      .antMatchers("/r/r1").hasAnyAuthority("p1")
+      .antMatchers("/r/r2").hasAnyAuthority("p2")
+  ```
+
+- 3.最后，FilterSecurityInterceptor会调用AccessDecisionManager进行授权决策，若决策通过，则允许访问资源，否则将禁止访问。
+
+AccessDecisionManager(访问决策管理器)的核心接口如下：
+
+```java
+public interface AccessDecisionManager {
+    /**
+    通过传递来的参数来决定用户是否有访问受保护的资源的权限
+    */
+    void decide(Authentication var1, Object var2, Collection<ConfigAttribute> var3) throws AccessDeniedException, InsufficientAuthenticationException;
+}
+```
+
+这里着重说明一下decide的参数：
+
+- authentication: 要访问资源的访问者身份
+- object: 要访问的受保护资源，web请求对应FilterInvocation
+- configAttributes: 是受保护资源的访问策略，通过SecurityMetadataSource获取。
+
+decide接口就是用来鉴定当前用户是否有访问对应受保护资源的权限。**
+
+#### 2.3.2 授权决策
+
+AccessDecisionManager采用投票的方式来确定是否能够访问受保护资源。
+
+![image-20200723221229868](Spring Security.assets/image-20200723221229868.png)
+
+
+
+
+
 ### 3. 会话
 
 用户认证通过后，为了避免用户的每次操作都进行认证可将用户的信息保存在会话中。spring security提供会话管理，认证通过后将身份信息放入SecurityContextHolder上下文,SecurityContext与当前线程进行绑定，方便获取用户身份。
@@ -413,6 +470,10 @@ private String getUserName() {
     return username;
 }
 ```
+
+**
+
+
 
 #### 3 .2会话控制
 

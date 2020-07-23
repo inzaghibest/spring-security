@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54c5645f-30a9-42ef-ad60-59bb3486bae1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/spring-security-learn.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring Security.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring Security.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zhangxp/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhangxp/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zhangxp/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhangxp/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zhangxp/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhangxp/service/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhangxp/service/MyUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zhangxp/SpringSecurityApplicationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zhangxp/controller/HiControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zhangxp/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhangxp/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zhangxp/service/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhangxp/service/MyUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zhangxp/SpringSecurityApplicationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zhangxp/controller/HiControllerTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -37,7 +40,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="E:\工具\apache-maven\apache-maven-3.3.1\localhouse" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../../工具/apache-maven/apache-maven-3.3.1" />
+        <option name="mavenHome" value="L:/../../工具/apache-maven/apache-maven-3.3.1" />
         <option name="userSettingsFile" value="E:\工具\apache-maven\apache-maven-3.3.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -69,7 +72,6 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-<<<<<<< HEAD
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.zhangxp.controller" />
@@ -91,9 +93,22 @@
       </list>
     </option>
   </component>
-=======
->>>>>>> 28d2a1570223534760de9f59c91577c888806d91
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SpringSecurityApplication">
+    <configuration name="TestBCypt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-security-learn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhangxp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhangxp" />
+      <option name="MAIN_CLASS_NAME" value="com.zhangxp.TestBCypt" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringSecurityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="spring-security-learn" />
       <extension name="coverage">
@@ -110,6 +125,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SpringSecurityApplication" />
+        <item itemvalue="JUnit.TestBCypt" />
       </list>
     </recent_temporary>
   </component>
@@ -124,17 +140,24 @@
       <option name="presentableId" value="Default" />
       <updated>1595423644759</updated>
       <workItem from="1595423647039" duration="3087000" />
-<<<<<<< HEAD
-      <workItem from="1595429305417" duration="4829000" />
-=======
       <workItem from="1595429305417" duration="4486000" />
       <workItem from="1595489769018" duration="4923000" />
->>>>>>> 28d2a1570223534760de9f59c91577c888806d91
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1595489791291">
