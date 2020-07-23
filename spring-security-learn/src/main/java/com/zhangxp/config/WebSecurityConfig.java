@@ -19,15 +19,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      * 配置用户信息,包括用户姓名，密码，权限等信息
      * @return UserDetailsService
      */
-    @Bean
-    public UserDetailsService userDetailsService()
-    {
-        // 基于内存的方式
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("zhangxp").password("123").authorities("p1").build());
-        manager.createUser(User.withUsername("zhangxa").password("123").authorities("p2").build());
-        return manager;
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService()
+//    {
+//        // 基于内存的方式
+//        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+//        manager.createUser(User.withUsername("zhangxp").password("123").authorities("p1").build());
+//        manager.createUser(User.withUsername("zhangxa").password("123").authorities("p2").build());
+//        return manager;
+//    }
 
     /**
      * 密码编码器，采用何种方式校验密码
